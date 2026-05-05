@@ -1,16 +1,29 @@
 #include <iostream>
+#include <cstring>
+
 using namespace std;
 
 int main() {
-    int arr[5];
-
-    for(int i = 0; i <= 5; i++) {  // error: out of bounds
-        arr[i] = i * 2;
+    int arr[2];
+    
+    for(int i = 0; i <= 10; i++) {
+        arr[i] = i * 5;
     }
 
-    int *ptr = new int;
-    // memory leak (delete nahi kiya)
+    int *ptr = new int[100];
+    ptr[0] = 500;
 
-    cout << "Done" << endl;
+    char source[] = "This string is way too long for the buffer";
+    char buffer[5];
+    strcpy(buffer, source);
+
+    int a = 10;
+    int b = 0;
+    int c = a / b;
+
+    int unusedVariable = 100;
+
+    cout << "Task Completed" << endl;
+
     return 0;
 }
